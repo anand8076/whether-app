@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weatherly - Live Weather Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- Header -->
+        <header class="header">
+
+            <a href="#" class="logo">
+                <span class="logo-icon">☁</span>
+                Weather<span class="logo-highlight">ly</span>
+            </a>
+
+            <div class="search-box">
+                <span class="search-icon">⌕</span>
+
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Search your city..."
+                    autocomplete="off"
+                >
+
+                <button id="searchBtn">Search</button>
+            </div>
+
+        </header>
+
+        <!-- Error / Loading Message -->
+        <div id="message" class="message" role="status" aria-live="polite"></div>
+
+        <!-- Current Weather -->
+        <section class="hero-section">
+
+            <div class="section-label">CURRENT WEATHER</div>
+
+            <div class="weather-card">
+
+                <div class="weather-info">
+
+                    <div class="location">
+                        <span>📍</span>
+                        <h1 id="cityName">Loading...</h1>
+                    </div>
+
+                    <p class="current-date" id="currentDate">
+                        Today's Weather
+                    </p>
+
+                    <div class="temperature-row">
+
+                        <h2 id="temperature">--°</h2>
+
+                        <div class="weather-description">
+                            <span id="weatherIcon">🌤️</span>
+                            <p id="description">Loading weather...</p>
+                        </div>
+
+                    </div>
+
+                    <p class="feels-text">
+                        Feels like <span id="heroFeels">--°</span>
+                    </p>
+
+                </div>
+
+                <div class="hero-decoration">
+                    <div class="sun-glow"></div>
+                    <span id="heroIcon">☀️</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Weather Details -->
+        <section class="details-section">
+
+            <div class="section-heading">
+                <h2>Today's Highlights</h2>
+                <p>Weather conditions at a glance</p>
+            </div>
+
+            <div class="details-grid">
+
+                <div class="detail-card">
+                    <div class="detail-top">
+                        <span>💧</span>
+                        <p>Humidity</p>
+                    </div>
+                    <h3 id="humidity">--%</h3>
+                    <small>Relative humidity</small>
+                </div>
+
+                <div class="detail-card">
+                    <div class="detail-top">
+                        <span>💨</span>
+                        <p>Wind Speed</p>
+                    </div>
+                    <h3 id="wind">-- km/h</h3>
+                    <small>Current wind speed</small>
+                </div>
+
+                <div class="detail-card">
+                    <div class="detail-top">
+                        <span>🌡️</span>
+                        <p>Feels Like</p>
+                    </div>
+                    <h3 id="feelsLike">--°</h3>
+                    <small>Apparent temperature</small>
+                </div>
+
+                <div class="detail-card">
+                    <div class="detail-top">
+                        <span>👁️</span>
+                        <p>Visibility</p>
+                    </div>
+                    <h3 id="visibility">-- km</h3>
+                    <small>Current visibility</small>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- 5 Day Forecast -->
+        <section class="forecast-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>5-Day Forecast</h2>
+                    <p>Weather prediction for upcoming days</p>
+                </div>
+                <span class="forecast-badge">5 DAYS</span>
+            </div>
+
+            <div class="forecast-grid" id="forecast">
+
+                <div class="empty-forecast">
+                    Loading forecast...
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Weatherly © 2026 | Powered by Open-Meteo API</p>
+            <p>Made with HTML, CSS & JavaScript</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
